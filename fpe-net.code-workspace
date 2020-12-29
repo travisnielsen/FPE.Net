@@ -1,0 +1,13 @@
+{
+    "folders": [
+      {
+        // Source code
+        "name": "FPE.Net",
+        "path": "FPE.Net"
+      },
+      {
+        "name": "FPE.Net.Test",
+        "path": "FPE.Net.Test"
+      }
+    ]
+}

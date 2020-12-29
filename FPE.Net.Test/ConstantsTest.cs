@@ -1,5 +1,5 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Numerics;
 
 namespace FPE.Net.Test
@@ -11,10 +11,10 @@ namespace FPE.Net.Test
      * @author Kai Johnson
      *
      */
-    [TestClass]
+    [TestFixture]
     public class ConstantsTest {
 
-        [TestMethod]
+        [Test]
         public void testConstants() {
             // validate values of MINLEN and MAXLEN
             Assert.IsTrue(Constants.MINLEN >= 2);

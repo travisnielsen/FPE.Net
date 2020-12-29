@@ -1,5 +1,5 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace FPE.Net.Test
 {
@@ -13,11 +13,11 @@ namespace FPE.Net.Test
      /// 
      /// Original author: Kai Johnson
      /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ConformanceTest
     {
 
-        [TestMethod]
+        [Test]
         public void testFF1Conformance()
         {
             try

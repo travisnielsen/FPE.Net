@@ -17,7 +17,7 @@
  */
 
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Numerics;
 
 namespace FPE.Net.Test
@@ -28,11 +28,11 @@ namespace FPE.Net.Test
      * @author Kai Johnson
      *
      */
-    [TestClass]
+    [TestFixture]
     public class CommonTest
     {
 
-        [TestMethod]
+        [Test]
         public void TestNumIntArrayInt()
         {
             // example from NIST SP 800-38G
@@ -136,7 +136,7 @@ namespace FPE.Net.Test
             Assert.AreEqual(Common.num(X6, 256), new BigInteger(Math.Pow(2, 80)));
         }
 
-        [TestMethod]
+        [Test]
         public void testNumByteArray()
         {
             // null input
@@ -208,7 +208,7 @@ namespace FPE.Net.Test
             Assert.AreEqual(new BigInteger(Math.Pow(2, 80)), Common.num(X13));
         }
 
-        [TestMethod]
+        [Test]
         public void testStr()
         {
             // example from NIST SP 800-38G
@@ -296,7 +296,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(X6, Common.str(new BigInteger(Math.Pow(2, 80)), 256, 11));
         }
 
-        [TestMethod]
+        [Test]
         public void testRev()
         {
             // example from NIST SP 800-38G
@@ -332,7 +332,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(Y4, Common.rev(X4));
         }
 
-        [TestMethod]
+        [Test]
         public void testRevb()
         {
             // example from NIST SP 800-38G
@@ -348,7 +348,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty array
@@ -369,7 +369,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(Y4, Common.revb(X4));
         }
 
-        [TestMethod]
+        [Test]
         public void testXor()
         {
             // example from NIST SP 800-38G
@@ -388,7 +388,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -399,7 +399,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // mismatched length
@@ -471,7 +471,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(Z3, Common.xor(X3, Y3));
         }
 
-        [TestMethod]
+        [Test]
         public void testLog2()
         {
             // examples from NIST SP 800-38G
@@ -506,7 +506,7 @@ namespace FPE.Net.Test
             Assert.IsTrue(Common.log2(1025) > 10);
         }
 
-        [TestMethod]
+        [Test]
         public void testFloor()
         {
             // examples from NIST SP 800-38G
@@ -531,7 +531,7 @@ namespace FPE.Net.Test
             Assert.AreEqual(2, 7 / 3);
         }
 
-        [TestMethod]
+        [Test]
         public void testCeiling()
         {
             // examples from NIST SP 800-38G
@@ -553,7 +553,7 @@ namespace FPE.Net.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void testModIntInt()
         {
             // examples from NIST SP 800-38G
@@ -586,7 +586,7 @@ namespace FPE.Net.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void testModBigIntegerBigInteger()
         {
             // examples from NIST SP 800-38G
@@ -637,7 +637,7 @@ namespace FPE.Net.Test
 
         }
 
-        [TestMethod]
+        [Test]
         public void testBytestringIntInt()
         {
             // example from NIST SP 800-38G
@@ -714,7 +714,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(expected8, Common.bytestring(Int32.MaxValue, 16));
         }
 
-        [TestMethod]
+        [Test]
         public void testBytestringBigIntegerInt()
         {
             // example from NIST SP 800-38G
@@ -782,7 +782,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(expected8, Common.bytestring(Int32.MaxValue, 16));
         }
 
-        [TestMethod]
+        [Test]
         public void testBitstring()
         {
             // example from NIST SP 800-38G
@@ -822,7 +822,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(expected5, Common.bitstring(true, 128));
         }
 
-        [TestMethod]
+        [Test]
         public void testConcatenateIntArrayIntArray()
         {
             // example from NIST SP 800-38G
@@ -839,7 +839,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -848,7 +848,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty input
@@ -862,7 +862,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(Z3, Common.concatenate(X3, Y3));
         }
 
-        [TestMethod]
+        [Test]
         public void testConcatenateByteArrayByteArray()
         {
             // example from NIST SP 800-38G
@@ -879,7 +879,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -888,7 +888,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty input
@@ -902,7 +902,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(Z3, Common.concatenate(X3, Y3));
         }
 
-        [TestMethod]
+        [Test]
         public void testIntArrayToString()
         {
             // null input
@@ -913,7 +913,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty input
@@ -932,7 +932,7 @@ namespace FPE.Net.Test
                     Common.intArrayToString(X3));
         }
 
-        [TestMethod]
+        [Test]
         public void testUnsignedByteArrayToString()
         {
             // null input
@@ -943,7 +943,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty input
@@ -966,7 +966,7 @@ namespace FPE.Net.Test
             Assert.AreEqual("[0, 127, 128, 255]", Common.unsignedByteArrayToString(X4));
         }
 
-        [TestMethod]
+        [Test]
         public void testByteArrayToHexString()
         {
             // null input
@@ -977,7 +977,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // empty input

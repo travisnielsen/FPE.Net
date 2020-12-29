@@ -17,7 +17,7 @@
  */
 
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace FPE.Net.Test
 {
@@ -27,18 +27,18 @@ namespace FPE.Net.Test
     /// 
     /// Original author: Kai Johnson
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class FF1Test
     {
 
-        [TestMethod]
+        [Test]
         public void testFF1()
         {
             FF1 ff1 = new FF1(10, 0);
             Assert.IsNotNull(ff1);
         }
 
-        [TestMethod]
+        [Test]
         public void testEncrypt()
         {
             int radix = 8;
@@ -66,7 +66,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -77,7 +77,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -88,7 +88,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // wrong key type
@@ -166,7 +166,7 @@ namespace FPE.Net.Test
             CollectionAssert.AreEquivalent(PT, ff1.decrypt(K, T, CT));
         }
 
-        [TestMethod]
+        [Test]
         public void testDecrypt()
         {
             int radix = 8;
@@ -195,7 +195,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -206,7 +206,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -217,7 +217,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // wrong key type
@@ -301,7 +301,7 @@ namespace FPE.Net.Test
         /// This test exercises the encrypt and decrypt methods with inputs of length
         /// 8, 64, 512 and 4096 symbols with each of the permitted key sizes.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void testStress()
         {
             int[] keySizes = { 128, 192, 256 };

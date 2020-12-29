@@ -17,7 +17,7 @@
  */
 
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace FPE.Net.Test
 {
@@ -27,18 +27,18 @@ namespace FPE.Net.Test
      * @author Kai Johnson
      *
      */
-    [TestClass]
+    [TestFixture]
     public class CiphersTest
     {
 
-        [TestMethod]
+        [Test]
         public void testCiphers()
         {
             Ciphers c = new Ciphers();
             Assert.IsNotNull(c);
         }
 
-        [TestMethod]
+        [Test]
         public void testPrf()
         {
             Ciphers c = new Ciphers();
@@ -55,7 +55,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -67,7 +67,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // wrong key type
@@ -129,7 +129,7 @@ namespace FPE.Net.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void testPrf2()
         {
             Ciphers c = new Ciphers();
@@ -146,7 +146,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -158,7 +158,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // wrong key type
@@ -220,7 +220,7 @@ namespace FPE.Net.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void testCiph()
         {
             Ciphers c = new Ciphers();
@@ -235,7 +235,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
             try
             {
@@ -245,7 +245,7 @@ namespace FPE.Net.Test
             }
             catch (Exception e)
             {
-                Assert.IsInstanceOfType(e, typeof(NullReferenceException));
+                Assert.IsInstanceOf<NullReferenceException>(e);
             }
 
             // wrong key type
